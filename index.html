@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Splatter - A California roadkill data visualizer</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="http://openlayers.org/en/v3.11.2/build/ol.js" type="text/javascript"></script>
+	</head>
+
+	<body class="homepage">
+		<div id="page-wrapper">
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Inner -->
+						<div class="inner">
+							<header id ="test">
+								<h1><a href="index.html" id="logo">Splatter</a></h1>
+								<hr />
+								<div id="headerText">A California roadkill data visualizer.</div>
+							</header>
+							<footer>
+								<a href="#banner" class="button circled scrolly">Start</a>
+							</footer>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="left-sidebar.html">Map</a></li>
+								
+							</ul>
+						</nav>
+
+				</div>
+
+			<!-- Banner -->
+				<section id="banner">
+					<header>
+						<h2>Hi. You're looking at <strong>Splatter</strong>.</h2>
+						<p>
+							A California roadkill data visualizer built with <strong><a href="http://www.openlayers.org">Openlayers 3 </a><strong>
+						</p>
+					</header>
+				</section>
+
+			
+			<!-- Main -->
+	<div class="wrapper style2">
+				<div class="map" id="map">
+				</div>
+				<script type="text/javascript">
+					  var map = new ol.Map({
+						target: 'map',
+						layers: [
+						  new ol.layer.Tile({
+							source: new ol.source.MapQuest({layer: 'osm'})
+						  })
+						],
+						view: new ol.View({
+						  center: ol.proj.fromLonLat([-120, 37.3]),
+						  zoom: 5.5
+						})
+					  });
+				</script>
+					<article id="main" class="container special">
+					
+					
+						<header>
+							<h2>More about splatter</h2>
+							<p>
+								Sociis aenean eu aenean mollis mollis facilisis primis ornare penatibus aenean. Cursus ac enim
+								pulvinar curabitur morbi convallis. Lectus malesuada sed fermentum dolore amet.
+							</p>
+						</header>
+						<p>
+							Commodo id natoque malesuada sollicitudin elit suscipit. Curae suspendisse mauris posuere accumsan massa
+							posuere lacus convallis tellus interdum. Amet nullam fringilla nibh nulla convallis ut venenatis purus
+							sit arcu sociis. Nunc fermentum adipiscing tempor cursus nascetur adipiscing adipiscing. Primis aliquam
+							mus lacinia lobortis phasellus suscipit. Fermentum lobortis non tristique ante proin sociis accumsan
+							lobortis. Auctor etiam porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum
+							consequat integer interdum integer purus sapien. Nibh eleifend nulla nascetur pharetra commodo mi augue
+							interdum tellus. Ornare cursus augue feugiat sodales velit lorem. Semper elementum ullamcorper lacinia
+							natoque aenean scelerisque.
+						</p>
+					</article>
+				</div>
+			<!-- Footer -->
+				<div id="footer">
+					<div class="container">
+						
+						</div> 
+						<hr />
+						<div class="row">
+							<div class="12u">
+
+								<!-- Contact -->
+									<section class="contact">
+										<header>
+											<h3>Footer</h3>
+										</header>
+										<p>Look at all this info in the footer...</p>
+									
+									</section>
+
+								<!-- Copyright -->
+									<div class="copyright">
+										<ul class="menu">
+											<li>&copy;Tim Williams. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+										</ul>
+									</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.onvisible.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script type="text/javascript">
+			$(".ol-zoom").remove();
+			$(".ol-rotate-reset").remove();
+			$(".map button").remove();
+			$(".map img").remove();
+			$(".map ul").remove();
+			</script>
+
+	</body>
+</html>
