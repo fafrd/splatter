@@ -4,10 +4,10 @@ var roadkillStyles = {
 	'Amphibian':
 	[new ol.style.Style({
 		image: new ol.style.Circle({
-			radius: 5,
+			radius: 3,
 			fill: new ol.style.Fill({
-			color: 'magenta'
-		}),
+                color: 'magenta'
+            }),
 			stroke: new ol.style.Stroke({
 			color: 'magenta',
 			width: 1
@@ -17,10 +17,10 @@ var roadkillStyles = {
 	'Bird':
 	[new ol.style.Style({
 		image: new ol.style.Circle({
-			radius: 5,
+			radius: 3,
 			fill: new ol.style.Fill({
-			color: 'blue'
-		}),
+                color: 'blue'
+            }),
 			stroke: new ol.style.Stroke({
 			color: 'blue',
 			width: 1
@@ -29,10 +29,10 @@ var roadkillStyles = {
 	})],
 	'Mammal (Large)': [new ol.style.Style({
 		image: new ol.style.Circle({
-			radius: 5,
+			radius: 6,
 			fill: new ol.style.Fill({
-			color: 'red'
-		}),
+                color: 'red'
+            }),
 			stroke: new ol.style.Stroke({
 			color: 'red',
 			width: 1
@@ -41,10 +41,10 @@ var roadkillStyles = {
 	})],
 	'Mammal (Medium)': [new ol.style.Style({
 		image: new ol.style.Circle({
-			radius: 5,
+			radius: 4.5,
 			fill: new ol.style.Fill({
-			color: 'orange'
-		}),
+                color: 'orange'
+            }),
 			stroke: new ol.style.Stroke({
 			color: 'orange',
 			width: 1
@@ -53,9 +53,9 @@ var roadkillStyles = {
 	})],
 	'Mammal (Small)': [new ol.style.Style({
 		image: new ol.style.Circle({
-			radius: 5,
+			radius: 3,
 			fill: new ol.style.Fill({
-			color: 'yellow'
+                color: 'yellow'
 			}),
 			stroke: new ol.style.Stroke({
 			color: 'yellow',
@@ -65,10 +65,10 @@ var roadkillStyles = {
 	})],
 	'Reptile': [new ol.style.Style({
 		image: new ol.style.Circle({
-			radius: 5,
+			radius: 3,
 			fill: new ol.style.Fill({
-			color: 'green'
-		}),
+                color: 'green'
+            }),
 			stroke: new ol.style.Stroke({
 			color: 'green',
 			width: 1
