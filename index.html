@@ -30,11 +30,9 @@
 						<nav id="nav">
 							<ul>
 								<li><a href="index.html">Home</a></li>
-								<li><a href="left-sidebar.html">Map</a></li>
-								
+								<li><a href="left-sidebar.html">Map</a></li>	
 							</ul>
 						</nav>
-
 				</div>
 
 			<!-- Banner -->
@@ -54,6 +52,7 @@
 				</div>
 				<script type="text/javascript" src="map.js"></script>
 				<button class="btn btn-default" onclick="layer_CROS.setVisible(!layer_CROS.getVisible())">Toggle Roadkill data</button>
+				<button class="btn btn-default" onclick="layer_cdfw.setVisible(!layer_cdfw.getVisible())">Toggle CDFW data</button>
 					<article id="main" class="container special">
 					
 					
@@ -118,11 +117,11 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script type="text/javascript">
-			$(".ol-zoom").remove();
-			$(".ol-rotate-reset").remove();
-			$(".map button").remove();
-			$(".map img").remove();
-			$(".map ul").remove();
+				$(".ol-zoom").remove();
+				$(".ol-rotate-reset").remove();
+				$(".map button").remove();
+				$(".map img").remove();
+				$(".map ul").remove();
 			</script>
 
 	</body>

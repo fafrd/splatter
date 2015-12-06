@@ -6,10 +6,10 @@ var roadkillStyles = {
 		image: new ol.style.Circle({
 			radius: 5,
 			fill: new ol.style.Fill({
-			color: 'rgb(0, 204, 0)'
+			color: 'magenta'
 		}),
 			stroke: new ol.style.Stroke({
-			color: 'rgb(0, 204, 0)',
+			color: 'magenta',
 			width: 1
 			})
 		})
@@ -19,10 +19,10 @@ var roadkillStyles = {
 		image: new ol.style.Circle({
 			radius: 5,
 			fill: new ol.style.Fill({
-			color: 'rgb(102, 153, 255)'
+			color: 'blue'
 		}),
 			stroke: new ol.style.Stroke({
-			color: 'rgb(102, 153, 255)',
+			color: 'blue',
 			width: 1
 			})
 		})
@@ -31,10 +31,10 @@ var roadkillStyles = {
 		image: new ol.style.Circle({
 			radius: 5,
 			fill: new ol.style.Fill({
-			color: 'rgb(102, 51, 0)'
+			color: 'red'
 		}),
 			stroke: new ol.style.Stroke({
-			color: 'rgb(102, 51, 0)',
+			color: 'red',
 			width: 1
 			})
 		})
@@ -43,10 +43,10 @@ var roadkillStyles = {
 		image: new ol.style.Circle({
 			radius: 5,
 			fill: new ol.style.Fill({
-			color: 'rgb(204, 136, 0)'
+			color: 'orange'
 		}),
 			stroke: new ol.style.Stroke({
-			color: 'rgb(204, 136, 0)',
+			color: 'orange',
 			width: 1
 			})
 		})
@@ -55,10 +55,10 @@ var roadkillStyles = {
 		image: new ol.style.Circle({
 			radius: 5,
 			fill: new ol.style.Fill({
-			color: 'rgb(255, 153, 255)'
-		}),
+			color: 'yellow'
+			}),
 			stroke: new ol.style.Stroke({
-			color: 'rgb(255, 153, 255)',
+			color: 'yellow',
 			width: 1
 			})
 		})
@@ -67,10 +67,10 @@ var roadkillStyles = {
 		image: new ol.style.Circle({
 			radius: 5,
 			fill: new ol.style.Fill({
-			color: 'rgb(0, 77, 0)'
+			color: 'green'
 		}),
 			stroke: new ol.style.Stroke({
-			color: 'rgb(0, 77, 0)',
+			color: 'green',
 			width: 1
 			})
 		})
@@ -94,21 +94,62 @@ var layer_CROS = new ol.layer.Vector({
 			projection: 'EPSG:3857'
 		})
 	}),
+	eventListeners: layerListeners,
 	name: 'CROS',
 	style: styleFunction
 	//visible: false
 })
 
-// MAP
+var layer_cdfw = new ol.layer.Vector({
+	source: new ol.source.Vector({
+		url: 'data/cdfw.geojson', 
+		format: new ol.format.GeoJSON({
+			defaultDataProjection: 'EPSG:4326', 
+			projection: 'EPSG:3857'
+		})
+	}),
+	name: 'CROS'
+	//style: styleFunction
+	//visible: false
+})
+//Layer Listeners
+var layerListeners = {
+    featureclick: function(e) {
+        log(e.object.name + " says: " + e.feature.id + " clicked.");
+        return false;
+    },
+    nofeatureclick: function(e) {
+        log(e.object.name + " says: No feature clicked.");
+    }
+};
+
+// Map
 
 var map = new ol.Map({
 	target: 'map',
 	layers: [
 		layer_basemap, 
-		layer_CROS 
+		layer_CROS, 
+		layer_cdfw
 	],
 	view: new ol.View({
 		center: ol.proj.fromLonLat([-120, 37.3]),
 		zoom: 5.5
-	})
+	}),
+
+	eventListeners: {
+	        featureover: function(e) {
+	            e.feature.renderIntent = "select";
+	            e.feature.layer.drawFeature(e.feature);
+	            console.log("Map says: Pointer entered " + e.feature.id + " on " + e.feature.layer.name);
+	        },
+	        featureout: function(e) {
+	            e.feature.renderIntent = "default";
+	            e.feature.layer.drawFeature(e.feature);
+	            console.log("Map says: Pointer left " + e.feature.id + " on " + e.feature.layer.name);
+	        },
+	        featureclick: function(e) {
+	            console.log("Map says: " + e.feature.id + " clicked on " + e.feature.layer.name);
+	        }
+	    }
 });
