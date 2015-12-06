@@ -52,20 +52,8 @@
 	<div class="wrapper style2">
 				<div class="map" id="map">
 				</div>
-				<script type="text/javascript">
-					  var map = new ol.Map({
-						target: 'map',
-						layers: [
-						  new ol.layer.Tile({
-							source: new ol.source.MapQuest({layer: 'osm'})
-						  })
-						],
-						view: new ol.View({
-						  center: ol.proj.fromLonLat([-120, 37.3]),
-						  zoom: 5.5
-						})
-					  });
-				</script>
+				<script type="text/javascript" src="map.js"></script>
+				<button class="btn btn-default" onclick="layer_CROS.setVisible(!layer_CROS.getVisible())">Toggle Roadkill data</button>
 					<article id="main" class="container special">
 					
 					
