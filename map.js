@@ -6,10 +6,10 @@ var roadkillStyles = {
 		image: new ol.style.Circle({
 			radius: 5,
 			fill: new ol.style.Fill({
-			color: 'violet'
+			color: 'rgb(0, 204, 0)'
 		}),
 			stroke: new ol.style.Stroke({
-			color: 'violet',
+			color: 'rgb(0, 204, 0)',
 			width: 1
 			})
 		})
@@ -19,10 +19,10 @@ var roadkillStyles = {
 		image: new ol.style.Circle({
 			radius: 5,
 			fill: new ol.style.Fill({
-			color: 'yellow'
+			color: 'rgb(102, 153, 255)'
 		}),
 			stroke: new ol.style.Stroke({
-			color: 'yellow',
+			color: 'rgb(102, 153, 255)',
 			width: 1
 			})
 		})
@@ -31,10 +31,10 @@ var roadkillStyles = {
 		image: new ol.style.Circle({
 			radius: 5,
 			fill: new ol.style.Fill({
-			color: 'orange'
+			color: 'rgb(102, 51, 0)'
 		}),
 			stroke: new ol.style.Stroke({
-			color: 'orange',
+			color: 'rgb(102, 51, 0)',
 			width: 1
 			})
 		})
@@ -43,10 +43,10 @@ var roadkillStyles = {
 		image: new ol.style.Circle({
 			radius: 5,
 			fill: new ol.style.Fill({
-			color: 'darkblue'
+			color: 'rgb(204, 136, 0)'
 		}),
 			stroke: new ol.style.Stroke({
-			color: 'blue',
+			color: 'rgb(204, 136, 0)',
 			width: 1
 			})
 		})
@@ -55,10 +55,10 @@ var roadkillStyles = {
 		image: new ol.style.Circle({
 			radius: 5,
 			fill: new ol.style.Fill({
-			color: 'blue'
+			color: 'rgb(255, 153, 255)'
 		}),
 			stroke: new ol.style.Stroke({
-			color: 'blue',
+			color: 'rgb(255, 153, 255)',
 			width: 1
 			})
 		})
@@ -67,10 +67,10 @@ var roadkillStyles = {
 		image: new ol.style.Circle({
 			radius: 5,
 			fill: new ol.style.Fill({
-			color: 'green'
+			color: 'rgb(0, 77, 0)'
 		}),
 			stroke: new ol.style.Stroke({
-			color: 'green',
+			color: 'rgb(0, 77, 0)',
 			width: 1
 			})
 		})
