@@ -2376,12 +2376,8 @@
       }
 
 .mapToggle{
-	margin-top:0%;
-	background-color:black;
 	width:15%;
-	height:100%;
 	display:inline-block;
-	border:2px solid black;
 }
 
 	#main {
