@@ -82,16 +82,46 @@ var styleFunction = function(feature, resolution) {
 }
 
 var styleFunction_birds = function(feature, resolution) {
-	var brightness = (feature.getProperties().SENSITIVE_) * 4 / 100;
-	if (brightness > 1) {brightness = 1};
+	var opacity = (feature.getProperties().SENSITIVE_) * 4 / 100;
+	if (opacity > 1) {opacity = 1};
 	return [new ol.style.Style({
 		image: new ol.style.Circle({
 			radius: 10,
 			fill: new ol.style.Fill({
-                color: 'hsla(61, 100%, 54%, ' + brightness + ')'
+                color: 'hsla(61, 100%, 54%, ' + opacity + ')'
             })
 		})
 	})]
+}
+
+var styleFunction_popden = function(feature, resolution) {
+	//var hue = (feature.getProperties().Population) / 10116705 * 50;
+	var hue = 0;
+	var pop = feature.getProperties().Population;
+	//30000
+	//180000
+	//530000
+	//2110000
+
+	if( pop < 30000 ) hue = 50;
+	else if( pop < 180000 ) hue = 37.5;
+	else if( pop < 530000 ) hue = 25;
+	else if( pop < 211000 ) hue = 12.5;
+	else hue = 0;
+
+	//if(lum > 100) {lum = 100}
+	console.log(hue)
+	console.log('hsla(304, 50%, 50%, 0.5)')
+	return [new ol.style.Style({
+		fill: new ol.style.Fill({
+            color: 'hsla(' + hue + ' , 50%, 50%, 0.7)'
+            //color: 'hsla(304, 50%, 23%, 0.5)'
+        }),
+        stroke: new ol.style.Stroke({
+			color: '#3399CC',
+			width: 1.25
+		})
+    })]
 }
 
 // LAYERS
@@ -219,6 +249,32 @@ var layer_birdareas = new ol.layer.Vector({
 	}),
 	name: 'Important bird areas',
 	style: styleFunction_birds
+	,visible: false
+})
+
+var layer_trafficvol = new ol.layer.Vector({
+	source: new ol.source.Vector({
+		url: 'data/trafficvol.geojson', 
+		format: new ol.format.GeoJSON({
+			defaultDataProjection: 'EPSG:4326', 
+			projection: 'EPSG:3857'
+		})
+	}),
+	name: 'Traffic volumes 2014'
+	//style: styleFunction
+	,visible: false
+})
+
+var layer_popden = new ol.layer.Vector({
+	source: new ol.source.Vector({
+		url: 'data/popden.geojson', 
+		format: new ol.format.GeoJSON({
+			defaultDataProjection: 'EPSG:4326', 
+			projection: 'EPSG:3857'
+		})
+	}),
+	name: 'California population density',
+	style: styleFunction_popden
 	//,visible: false
 })
 
@@ -246,15 +302,17 @@ var map = new ol.Map({
 	]),
 	layers: [
 		layer_basemap, 
+        layer_popden,
+		layer_cdfw,
 		layer_CROS_amphibian, 
 		layer_CROS_bird, 
 		layer_CROS_mammal_lg, 
 		layer_CROS_mammal_med, 
 		layer_CROS_mammal_sm, 
 		layer_CROS_reptile, 
-		layer_cdfw,
         layer_mammaltracks,
-        layer_birdareas
+        layer_birdareas,
+        layer_trafficvol
 	],
 	view: new ol.View({
 		center: ol.proj.fromLonLat([-120, 37.3]),

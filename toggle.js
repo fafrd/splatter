@@ -28,8 +28,8 @@ function roadkill()
 	layer_CROS_mammal_med.setVisible(true);
 	layer_CROS_mammal_sm.setVisible(true);
 	layer_CROS_reptile.setVisible(true);
+};
 
-}
 function allOff()
 {
 	layer_CROS_bird.setVisible(false);
