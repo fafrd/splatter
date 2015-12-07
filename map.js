@@ -129,8 +129,8 @@ var map = new ol.Map({
 	target: 'map',
 	layers: [
 		layer_basemap, 
-		layer_CROS, 
-		layer_cdfw
+		layer_cdfw,
+		layer_CROS 
 	],
 	view: new ol.View({
 		center: ol.proj.fromLonLat([-120, 37.3]),

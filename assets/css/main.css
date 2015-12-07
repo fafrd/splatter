@@ -2369,10 +2369,20 @@
 
  .map {
  		border:2px outset black;
-        height: 15%;
-        width: 100%;
+        height: 20%;
+        width: 80%;
+        margin-left:1%;
+        display:inline-block;
       }
 
+.mapToggle{
+	margin-top:0%;
+	background-color:black;
+	width:15%;
+	height:100%;
+	display:inline-block;
+	border:2px solid black;
+}
 
 	#main {
 		margin-bottom: 0;
