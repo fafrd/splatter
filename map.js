@@ -232,9 +232,16 @@ var layerListeners = {
 };
 
 // Map
-
+var scaleLineControl = new ol.control.ScaleLine();
 var map = new ol.Map({
 	target: 'map',
+	controls: ol.control.defaults({
+		attributionOptions: /** @type {olx.control.AttributionOptions} */ ({
+			collapsible: false
+		})
+	}).extend([
+		scaleLineControl
+	]),
 	layers: [
 		layer_basemap, 
 		layer_CROS_amphibian, 
@@ -268,3 +275,4 @@ var map = new ol.Map({
 	        }
 	    }
 });
+scaleLineControl.setUnits("us");
