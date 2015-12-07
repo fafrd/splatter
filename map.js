@@ -232,25 +232,18 @@ var layerListeners = {
 };
 
 // Map
-var scaleLineControl = new ol.control.ScaleLine();
+
 var map = new ol.Map({
 	target: 'map',
-	controls: ol.control.defaults({
-		attributionOptions: /** @type {olx.control.AttributionOptions} */ ({
-			collapsible: false
-		})
-	}).extend([
-		scaleLineControl
-	]),
 	layers: [
 		layer_basemap, 
+		layer_cdfw,
 		layer_CROS_amphibian, 
 		layer_CROS_bird, 
 		layer_CROS_mammal_lg, 
 		layer_CROS_mammal_med, 
 		layer_CROS_mammal_sm, 
 		layer_CROS_reptile, 
-		layer_cdfw,
         layer_mammaltracks,
         layer_birdareas
 	],
@@ -275,4 +268,3 @@ var map = new ol.Map({
 	        }
 	    }
 });
-scaleLineControl.setUnits("us");
