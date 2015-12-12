@@ -1615,7 +1615,7 @@ div.ol-scale-line-inner {
 	}
 
 	strong, b {
-		font-weight: 400;
+		font-weight: 600;
 		color: #483949;
 	}
 
@@ -2000,7 +2000,7 @@ div.ol-scale-line-inner {
 		display: inline-block;
 		background: #df7366;
 		color: #fff;
-		text-align: center;
+		text-align: left;
 		/*border-radius: 0.5em;*/
 		text-decoration: none;
 		margin-bottom:1%;
@@ -2393,8 +2393,22 @@ div.ol-scale-line-inner {
 
 .mapToggle{
 	width:15%;
-	display:inline-block;
+	height: 100%;
+	display: flex;
+  	flex-direction: column;
 	float:right;
+}
+.mapToggle > button
+{
+	flex: 1;
+}
+.legend
+{
+	background: ;
+	float: left;
+	width: 98.5%;
+	height: 20%;
+	margin-left: 1.5%;
 }
 
 .mapWrap{

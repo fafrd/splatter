@@ -7,6 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<script src="http://openlayers.org/en/v3.11.2/build/ol.js" type="text/javascript"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	</head>
 
 	<body class="homepage">
@@ -49,38 +50,36 @@
 			<!-- Main -->
 	<div class="wrapper style2">
 		<div class="mapWrap">
-				<div class="map" id="map">
-				</div>
-				<div class="mapToggle">
-					<button class="CROS btn btn-default" onclick="roadkill()">Toggle Roadkill data</button>
-					<button class="pre1 btn btn-default" onclick="cdfw()">Preset 1</button>
-					<button class="pre2 btn btn-default" onclick="cdfw()">Preset 2</button>
-					<button class="pre3 btn btn-default" onclick="cdfw()">Preset 3</button>
-					<button class="pre4 btn btn-default" onclick="cdfw()">Preset 4</button>
-					<button class="birds btn btn-default" onclick="birds()">Birds</button>
-					<button class="btn btn-default" onclick="cdfw()">Toggle CDFW data</button>
-					<button class="btn btn-default" onclick="cdfw()">Toggle CDFW data</button>
-					<button class="btn btn-default" onclick="cdfw()">Toggle CDFW data</button>
-					<button class="btn btn-default" onclick="cdfw()">Toggle CDFW data</button>
-					<button class="btn btn-default" onclick="cdfw()">Toggle CDFW data</button>
-		</div> 
-				</div>
-				<script type="text/javascript" src="map.js"></script>
-				
-					<article id="main" class="container special">
-					
-						<p id="info">
-							Commodo id natoque malesuada sollicitudin elit suscipit. Curae suspendisse mauris posuere accumsan massa
-							posuere lacus convallis tellus interdum. Amet nullam fringilla nibh nulla convallis ut venenatis purus
-							sit arcu sociis. Nunc fermentum adipiscing tempor cursus nascetur adipiscing adipiscing. Primis aliquam
-							mus lacinia lobortis phasellus suscipit. Fermentum lobortis non tristique ante proin sociis accumsan
-							lobortis. Auctor etiam porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum
-							consequat integer interdum integer purus sapien. Nibh eleifend nulla nascetur pharetra commodo mi augue
-							interdum tellus. Ornare cursus augue feugiat sodales velit lorem. Semper elementum ullamcorper lacinia
-							natoque aenean scelerisque.
-						</p>
-					</article>
-				</div>
+			<div class="map" id="map"></div>
+			<div class="mapToggle">
+				<button class="CROS btn btn-default" onclick="CROS_amphibian()">Roadkill: Amphibian</button>
+				<button class="CROS btn btn-default" onclick="CROS_bird()">Roadkill: Bird</button>
+				<button class="CROS btn btn-default" onclick="CROS_mammalL()">Roadkill: Mammal L</button>
+				<button class="CROS btn btn-default" onclick="CROS_mammalM()">Roadkill: Mammal M</button>
+				<button class="CROS btn btn-default" onclick="CROS_mammalS()">Roadkill: Mammal S</button>
+				<button class="CROS btn btn-default" onclick="CROS_reptile()">Roadkill: Reptile</button>
+				<button class="popdensity btn btn-default" onclick="denRoadkill()">Pop Density</button>
+				<button class="pre2 btn btn-default" onclick="population()">Population</button>
+				<button class="pre3 btn btn-default" onclick="travelTime()">Travel Time</button>
+				<button class="pre4 btn btn-default" onclick="poverty()">Poverty</button>
+				<button class="birds btn btn-default" onclick="birds()">Birds</button>
+				<button class="birds btn btn-default" onclick="allOff()" style="background: black;">Disable All</button>
+			</div>
+			<div class="legend"></div>
+		</div>
+			<script type="text/javascript" src="map.js"></script>
+			
+			<article id="main" class="container special">
+			
+				<p id="info">
+				</p>
+			</article>
+		</div>
+		<div class="wrapper style2" style="padding-top:40px;">
+			<img src="https://lh3.googleusercontent.com/-LgQn-2mTp-o/UEAKtQ71xnI/AAAAAAAAOOQ/jJaJA3c_Tsg/w1077-h1076/KelvinHeadShot.png" style="height:auto; max-width: 100%;">
+		</div>
+
+
 			<!-- Footer -->
 				<div id="footer">
 					<div class="container">
@@ -93,11 +92,17 @@
 								<!-- Contact -->
 									<section class="contact">
 										<header>
-											<h3>Footer</h3>
+											<h2 style="margin-top: -40px;">Download Source Data</h2>
 										</header>
-										<p>Look at all this info in the footer...</p>
-									
+										<ul style="text-decoration: underline;">
+											<li><a href="data/source/CROS_6-9_2015.zip">Roadkill data (June-September 2015)</a></li>
+											<li><a href="data/source/popden.zip">Population, Population Density</a></li>
+											<li><a href="data/source/popden.zip">Traffic Volumes</a></li>
+											<li><a href="data/source/popden.zip">Poverty Rates</a></li>
+											<li><a href="data/source/important bird areas.zip">Important bird habitat sites</a></li>
+										</ul>
 									</section>
+
 
 								<!-- Copyright -->
 									<div class="copyright">
