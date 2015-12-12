@@ -1,22 +1,119 @@
 
-$(".popdensity").click(function(){
-	document.getElementById("info").innerHTML = "<b>Population Density per county</b>";
-});
 
-$(".pre2").click(function(){
-	document.getElementById("info").innerHTML = "<b>Population per county</b>";
-});
+$(document).ready(function()
+{
+	/*
+	CROS_a
+	CROS_b
+	CROS_ml
+	CROS_mm
+	CROS_ms
+	CROS_r
+	popdensity
+	population
+	traveltime
+	poverty
+	birds
+	*/
+	$('.popdensity').mouseenter(function()
+	{
+		$('.abc').append("<b>Population Density By County</b>");
+	});
+	$('.popdensity').mouseleave(function()
+	{
+		$('.abc').empty();
+	});
 
-$(".pre3").click(function(){
-	document.getElementById("info").innerHTML = "<b>Average commute to work time per county</b>";
-});
+	$('.population').mouseenter(function()
+	{
+		$('.abc').append("<b>Population By County</b>");
+	});
+	$('.population').mouseleave(function()
+	{
+		$('.abc').empty();
+	});
 
-$(".pre4").click(function(){
-	document.getElementById("info").innerHTML = "<b>Poverty Rate per county</b>";
-});
+	$('.traveltime').mouseenter(function()
+	{
+		$('.abc').append("<b>Average Travel Time to Work By County</b>");
+	});
+	$('.traveltime').mouseleave(function()
+	{
+		$('.abc').empty();
+	});
 
-$(".birds").click(function(){
-	document.getElementById("info").innerHTML = "<b>Important bird habitat sites</b>";
+	$('.poverty').mouseenter(function()
+	{
+		$('.abc').append("<b>Porvery Rate By County</b>");
+	});
+	$('.poverty').mouseleave(function()
+	{
+		$('.abc').empty();
+	});
+
+	$('.birds').mouseenter(function()
+	{
+		$('.abc').append("<b>Important Bird Sites</b>");
+	});
+	$('.birds').mouseleave(function()
+	{
+		$('.abc').empty();
+	});
+
+	$('.CROS_a').mouseenter(function()
+	{
+		$('.abc').append("<b>Amphibian Death Location: purple plot points</b>");
+	});
+	$('.CROS_a').mouseleave(function()
+	{
+		$('.abc').empty();
+	});
+
+	$('.CROS_b').mouseenter(function()
+	{
+		$('.abc').append("<b>Bird Death Location: blue plot points</b>");
+	});
+	$('.CROS_b').mouseleave(function()
+	{
+		$('.abc').empty();
+	});
+
+	$('.CROS_ml').mouseenter(function()
+	{
+		$('.abc').append("<b>Large Mammal Death Location: red plot points</b>");
+	});
+	$('.CROS_ml').mouseleave(function()
+	{
+		$('.abc').empty();
+	});
+
+	$('.CROS_mm').mouseenter(function()
+	{
+		$('.abc').append("<b>Medium Mammal Death Location: orange plot points</b>");
+	});
+	$('.CROS_mm').mouseleave(function()
+	{
+		$('.abc').empty();
+	});
+
+	$('.CROS_ms').mouseenter(function()
+	{
+		$('.abc').append("<b>Small Mammal Death Location: yellow plot points</b>");
+	});
+	$('.CROS_ms').mouseleave(function()
+	{
+		$('.abc').empty();
+	});
+
+	$('.CROS_r').mouseenter(function()
+	{
+		$('.abc').append("<b>Reptile Death Location: green plot points</b>");
+	});
+	$('.CROS_r').mouseleave(function()
+	{
+		$('.abc').empty();
+	});
+
 });
 
 function cdfw(){

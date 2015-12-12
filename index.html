@@ -52,18 +52,18 @@
 		<div class="mapWrap">
 			<div class="map" id="map"></div>
 			<div class="mapToggle">
-				<button class="CROS btn btn-default" onclick="CROS_amphibian()">Roadkill: Amphibian</button>
-				<button class="CROS btn btn-default" onclick="CROS_bird()">Roadkill: Bird</button>
-				<button class="CROS btn btn-default" onclick="CROS_mammalL()">Roadkill: Mammal L</button>
-				<button class="CROS btn btn-default" onclick="CROS_mammalM()">Roadkill: Mammal M</button>
-				<button class="CROS btn btn-default" onclick="CROS_mammalS()">Roadkill: Mammal S</button>
-				<button class="CROS btn btn-default" onclick="CROS_reptile()">Roadkill: Reptile</button>
+				<button class="CROS_a btn btn-default" onclick="CROS_amphibian()">Roadkill: Amphibian</button>
+				<button class="CROS_b btn btn-default" onclick="CROS_bird()">Roadkill: Bird</button>
+				<button class="CROS_ml btn btn-default" onclick="CROS_mammalL()">Roadkill: Mammal L</button>
+				<button class="CROS_mm btn btn-default" onclick="CROS_mammalM()">Roadkill: Mammal M</button>
+				<button class="CROS_ms btn btn-default" onclick="CROS_mammalS()">Roadkill: Mammal S</button>
+				<button class="CROS_r btn btn-default" onclick="CROS_reptile()">Roadkill: Reptile</button>
 				<button class="popdensity btn btn-default" onclick="denRoadkill()">Pop Density</button>
-				<button class="pre2 btn btn-default" onclick="population()">Population</button>
-				<button class="pre3 btn btn-default" onclick="travelTime()">Travel Time</button>
-				<button class="pre4 btn btn-default" onclick="poverty()">Poverty</button>
+				<button class="population btn btn-default" onclick="population()">Population</button>
+				<button class="traveltime btn btn-default" onclick="travelTime()">Travel Time</button>
+				<button class="poverty btn btn-default" onclick="poverty()">Poverty</button>
 				<button class="birds btn btn-default" onclick="birds()">Birds</button>
-				<button class="birds btn btn-default" onclick="allOff()" style="background: black;">Disable All</button>
+				<button class="btn btn-default" onclick="allOff()" style="background: black;">Disable All</button>
 			</div>
 			<div class="legend"></div>
 		</div>
@@ -71,12 +71,31 @@
 			
 			<article id="main" class="container special">
 			
-				<p id="info">
+				<p id="info" class="abc">
 				</p>
 			</article>
 		</div>
+
+		<section id="banner">
+			<header>
+				<h2>Interesting <strong>Statistics</strong>.</h2>
+				<p style="font-weight: normal">
+					Some interesting infographics from data visualization
+				</p>
+			</header>
+		</section>
+
+
 		<div class="wrapper style2" style="padding-top:40px;">
-			<img src="https://lh3.googleusercontent.com/-LgQn-2mTp-o/UEAKtQ71xnI/AAAAAAAAOOQ/jJaJA3c_Tsg/w1077-h1076/KelvinHeadShot.png" style="height:auto; max-width: 100%;">
+			<div class="mapWrap">
+				<div class="img"></div>
+				<article id="main" class="container special" style="font-weight: normal">
+			
+					<p id="info">By toggling roadkill layers on top of California counties, we can measure how many deaths were reported in each county. 
+					</p>
+					<p id="info">The above infographic shows there is an especially high rate of reporting in Santa Barbara county.</p>
+				</article>
+			</div>
 		</div>
 
 
