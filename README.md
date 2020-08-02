@@ -1,4 +1,4 @@
-# splatter abc
+# splatter
 
 http://wizwar.net/splatter
 
